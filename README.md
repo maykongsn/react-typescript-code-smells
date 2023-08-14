@@ -1,0 +1,1 @@
+## React e TypeScript Code Smells
