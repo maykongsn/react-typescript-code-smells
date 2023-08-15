@@ -1,24 +1,24 @@
-|FIELD1|Code Smell                                                         |Fontes                |
+|      |Code Smell                                                         |Fontes                |
 |------|-------------------------------------------------------------------|----------------------|
-|1     |Children prop without explicitly type                              |F1                    |
+|1     |Children Props Pitfall                                             |F1                    |
 |2     |Many Non-Null Assertions                                           |F3, F7, F20           |
-|3     |Not use any type in TypeScript                                     |F3, F10, F22, F26, F34|
-|4     |Type aliases should be used                                        |F3, F11               |
+|3     |Any Type                                                           |F3, F10, F22, F26, F34|
+|4     |Missing Union Type Abstraction                                     |F3, F11               |
 |5     |Magic Strings and Numbers                                          |F22, F14              |
-|6     |Enum implicit values                                               |F12                   |
+|6     |Enum Implicit Values                                               |F12                   |
 |7     |Prop-types in TSX                                                  |F21, F25              |
 |8     |Value as SomeType                                                  |F34, F19              |
 |9     |Rely on Generated Types                                            |F35                   |
-|10    |Multiple booleans for state                                        |F27                   |
+|10    |Multiple Booleans for State                                        |F27                   |
 |11    |Props Plowing                                                      |F4                    |
 |12    |Component Nesting                                                  |F4                    |
 |13    |Heavy Work                                                         |F4                    |
 |14    |Messy Events                                                       |F4                    |
 |15    |Coupled State                                                      |F4, F5                |
-|16    |React Context Provider values should not have non-stable identities|F8                    |
-|17    |React components should not render non-boolean condition values    |F9                    |
+|16    |React Context Provider Values Non-Stable Identities                |F8                    |
+|17    |React Components non-boolean condition values                      |F9                    |
 |18    |Destroy and Recreate                                               |F23                   |
-|19    |Index as key                                                       |F24                   |
+|19    |Index as Key                                                       |F24                   |
 |20    |Props Spreading                                                    |F25, F38              |
 |21    |Too Many useState                                                  |F27                   |
 |22    |Large useEffect                                                    |F27                   |
