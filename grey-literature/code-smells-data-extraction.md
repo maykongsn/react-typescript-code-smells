@@ -1,4 +1,4 @@
-|      |Code Smell                                                         |Fontes                |
+|      |Code Smell                                                         |Souces                |
 |------|-------------------------------------------------------------------|----------------------|
 |1     |Children Props Pitfall                                             |F1                    |
 |2     |Many Non-Null Assertions                                           |F3, F7, F20           |

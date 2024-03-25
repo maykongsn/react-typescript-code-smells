@@ -1,18 +1,18 @@
-# React e TypeScript Code Smells
+# React and TypeScript Code Smells
 
-> Identificar e analisar os _code smells_ mais comuns no desenvolvimento com React e TypeScript
+> Identifying and analyzing the most common code smells in development with React and TypeScript.
 
 ---
 
-## Sumário
+## Summary
 
 [Code smells](#code-smells) <br>
   - [TypeScript smells](#typescript-smells)
     - [Any Type](#any-type)
-    - [Many Non-Null Assertions](#many-non-null-assertions)
+    - [Non-Null Assertions](#non-null-assertions)
     - [Missing Union Type Abstraction](#missing-union-type-abstraction)
     - [Enum Implicit Values](#enum-implicit-values)
-  - [React e TypeScript](#react-e-typescript)
+  - [React and TypeScript](#react-and-typescript-smells)
     - [Multiple Booleans for State](#multiple-booleans-for-state)
     - [Children Props Pitfall](#children-props-pitfall)
 ---
@@ -22,8 +22,7 @@
 ### TypeScript smells
 
 #### Any Type
-O TypeScript permite a verificação e inferência de tipos para variáveis, objetos, funções,
-etc. Ao definir o tipo any para algum dos elementos do código, o desenvolvedor está desativando a checagem de tipos, possibilitando a manipulação dessas entidades sem qualquer verificação. Por exemplo, considere o código abaixo, onde um estado tem o seu tipo definido como ``any``. Isso é problemático porque anula os benefícios que o TypeScript oferece em termos de segurança de tipos e detecção de erros em tempo de compilação. Consequentemente, sem a verificação, é possível que erros em tempo de execução aconteçam.
+TypeScript allows type checking and type inference for variables, objects, functions, etc. By defining the type ``any`` for an element in the code, the developer is disabling type checking, allowing manipulation of these entities without any verification. For example, consider the code below, where a state has its type defined as ``any``. This is problematic because it nullifies the benefits that TypeScript offers in terms of type safety and compile-time error detection. Consequently, without the check, runtime errors may occur.
 
 ```tsx
 import React, { useState } from 'react';
@@ -37,8 +36,10 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
-#### Many Non-Null Assertions
-É comum que os desenvolvedores utilizem o operador não-nulo para informar que uma propriedade não será ``null`` ou ``undefined`` em momentos que a verificação de tipos não consegue deduzir isso. No exemplo a seguir, a interface ``DataProps`` infere que ``data`` pode ser do tipo ``null``. Por esse motivo, o desenvolvedor utiliza o operador não-nulo, para garantir ao TypeScript que ``data`` não será ``null``. Por consequência, erros em tempo de execução podem ocorrer pela falta de checagem de tipo e a possibilidade de receber ``null``.
+---
+
+## Non-Null Assertions
+It is common for developers to use the non-null operator to indicate that a property will not be null or undefined in cases where type checking cannot deduce this. In the following example, the interface ``DataProps`` infers that ``data`` can be of type null. For this reason, the developer uses the non-null operator to assure TypeScript that ``data`` will not be null. Consequently, runtime errors may occur due to lack of type checking and the possibility of receiving null.
 
 ```tsx
 function Component({ data }: { data: { prop1: string; prop2: number } | null }) {
@@ -51,8 +52,10 @@ function Component({ data }: { data: { prop1: string; prop2: number } | null }) 
 }
 ```
 
-#### Missing Union Type Abstraction
-Os ``type aliases`` do TypeScript são similares às interfaces, no entanto, eles aceitam ``union types``, algo que as interfaces não permitem. Além disso, facilitam a manutenção, reusabilidade e legibilidade do código. O exemplo a seguir demonstra um componente em que as ``props`` são do tipo ``string``, ``number`` ou ``boolean``. Nesse caso, é recomendável utilizar ``type aliases`` para evitar a repetição de ``union types``.
+---
+
+## Missing Union Type Abstraction
+``Type aliases`` in TypeScript are similar to interfaces. However, they accept ``union types``, something interfaces do not allow. Additionally, they facilitate code maintenance, reusability, and code readability. The following example demonstrates a component where the props are of type string, number, or boolean. In this case, it is recommended to use type aliases to avoid repetition of union types.
 
 ```tsx
 function Component({ prop }: {
@@ -64,8 +67,10 @@ function Component({ prop }: {
 }
 ```
 
-#### Enum Implicit Values
-Os ``enums`` são uma forma de definir constantes e facilitar a manutenção e legibilidade de um código. No entanto, no TypeScript, é comum que os desenvolvedores usem ``enums`` sem definir um valor explícitos para eles. Sendo assim, o TypeScript define valores numéricos para eles seguindo a ordem. Neste exemplo, as constantes ``Pending``, ``Processing`` e ``Completed`` estão sem valores explícitos. Com isso, caso o desenvolvedor adicione uma nova constante como ``Failed``, poderá alterar a ordem e consequentemente os valores numéricos do ``enum``.
+---
+
+## Enum Implicit Values
+Enums are a way to define constants and facilitate code maintenance and readability. However, in TypeScript, it is common for developers to use enums without defining explicit values for them. Therefore, TypeScript assigns numerical values to them following the order. In this example, the constants ``Pending``, ``Processing`` and ``Completed`` are without explicit values. Consequently, if the developer adds a new constant like ``Failed``, it may change the order and the numerical values of the enum.
 
 ```tsx
 enum PaymentStatus {
@@ -75,8 +80,12 @@ enum PaymentStatus {
 }
 ```
 
-#### Multiple Booleans for State
-É comum que os desenvolvedores usem muitos ``states`` do tipo ``boolean`` para definir o estado do componente. Isso aumenta a complexidade e torna o código difícil de manter à medida que o número de ``states`` e tipagem aumenta. No exemplo mostrado, o componente possui alguns ``useState`` do tipo ``boolean``, que podem ser substituídos por alternativas para a melhor tipagem.
+---
+
+### React and TypeScript smells
+
+## Multiple Booleans for State
+Developers commonly use many boolean-type states to define the component's state. This increases complexity and makes the code difficult to maintain as the number of states and typing increases. In the example shown, the component has some ``useState`` of boolean type, which can be replaced with better typing alternatives.
 
 ```tsx
 function Component() {
@@ -87,19 +96,10 @@ function Component() {
 }
 ```
 
-Para refatorar esse smell, podemos criar um objeto de estado que representa todos os possíveis estados do componente. Cada estado será uma classe que encapsula o comportamento associado a esse estado.
+---
 
-```tsx
-const [state, setState] = useState({
-  isLoading: false,
-  isError: false,
-  isModalOpen: false,
-  // ...
-});
-```
-
-#### Children Props Pitfall
-Se o componente utiliza children props, os desenvolvedores devem optar pela tipagem correta, para conseguir passar os elementos JSX. Então, os desenvolvedores devem utilizar os tipos providos por ```@types/react``` ou algum outro tipo primitivo, funções, etc. Por isso, não é uma boa prática definir ```any``` ou tipos que podem restringir os elementos JSX e que afetam a legibilidade como: ```undefined```, ```null```, ```unknown``` e ```never```.
+## Children Props Pitfall
+If the component uses children props, developers should opt for the correct typing to be able to pass JSX elements. Therefore, developers should use ``ReactNode`` or some other primitive type, functions, etc. For this reason, it is not a good practice to define ``any`` or types that can restrict JSX elements and affect readability, such as: ``undefined``, ``null``, ``unknown`` and ``never``.
 
 ```tsx
 type ComponentProps = {
@@ -111,16 +111,4 @@ interface AnotherComponentProps {
 }
 ```
 
-Para corrigir esse smell, podemos definir o tipo ```ReactNode``` para o children.
-
-```tsx
-import { ReactNode } from "react";
-
-type ComponentProps = {
-  children: ReactNode;
-};
-
-interface AnotherComponentProps {
-  children: ReactNode;
-}
-```
+---
