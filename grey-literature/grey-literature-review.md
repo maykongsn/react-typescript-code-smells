@@ -36,15 +36,16 @@
 |F34   |https://levelup.gitconnected.com/typescript-difference-between-any-and-unknown-types-1fff4bf232a                             |Concise text and example               |
 |F35   |https://quokkalabs.com/blog/anti-patterns-you-should-know-while-coding/                                                      |Author with experience and previous publications |
 |F36   |https://reacttraining.com/blog/isMounted-tricks-are-code-smell                                                               |Author with experience and previous publications |
-|F37   |https://reacthustle.com/blog/speed-up-your-react-apps-by-using-debounce-with-typescript                                      |Concise text and example               |
-|F38   |https://www.codementor.io/blog/react-optimization-5wiwjnf9hj                                                                 |Concise text and example               |
-|F39   |https://cichocinski.dev/blog/5-reasons-why-destructuring-hurt-your-typescript-codebase                                       |Author with experience and previous publications |
-|F40   |https://riptutorial.com/reactjs/example/15854/common-antipattern                                                             |Texto obetivo e exemplos                |
-|F41   |https://aroundreact.com/10-bad-typescript-habits-to-get-rid-of-in-2023/                                                      |Concise text and example               |
-|F42   |https://crystallize.com/blog/migrating-frontend-typescript                                                                   |Author with experience and previous publications |
-|F43   |https://flaming.codes/posts/advanced-try-catch-finally-in-javascript-and-typescript                                          |Concise text and example               |
-|F44   |https://www.tiny.cloud/blog/six-common-mistakes-to-avoid-when-using-react/                                                   |Author with previous publications and concise text  |
-|F45   |https://ed.software/articles/is-prop-spreading-an-anti-pattern                                                               |Author with experience and previous publications |
-|F46   |https://hackernoon.com/reducing-bugs-in-react-codebase-by-understanding-anti-patterns                                        |Author with experience and previous publications |
-|F47   |https://www.kantega.no/blogg/slaying-a-ui-antipattern-with-typescript-and-react                                              |Author with previous publications and concise text  |
-|F48   |https://steven-lemon182.medium.com/are-typescript-barrel-files-an-anti-pattern-72a713004250                                  |Author with previous publications and concise text  |                                                                                                               |                                        |
+|F37 |https://medium.com/@herr__jonas/antipattern-overflexible-props-in-react-typescript-04b33dd53741|Concise text and example
+|F38   |https://reacthustle.com/blog/speed-up-your-react-apps-by-using-debounce-with-typescript                                      |Concise text and example               |
+|F39   |https://www.codementor.io/blog/react-optimization-5wiwjnf9hj                                                                 |Concise text and example               |
+|F40   |https://cichocinski.dev/blog/5-reasons-why-destructuring-hurt-your-typescript-codebase                                       |Author with experience and previous publications |
+|F41   |https://riptutorial.com/reactjs/example/15854/common-antipattern                                                             |Texto obetivo e exemplos                |
+|F42   |https://aroundreact.com/10-bad-typescript-habits-to-get-rid-of-in-2023/                                                      |Concise text and example               |
+|F43   |https://crystallize.com/blog/migrating-frontend-typescript                                                                   |Author with experience and previous publications |
+|F44   |https://flaming.codes/posts/advanced-try-catch-finally-in-javascript-and-typescript                                          |Concise text and example               |
+|F45   |https://www.tiny.cloud/blog/six-common-mistakes-to-avoid-when-using-react/                                                   |Author with previous publications and concise text  |
+|F46   |https://ed.software/articles/is-prop-spreading-an-anti-pattern                                                               |Author with experience and previous publications |
+|F47   |https://hackernoon.com/reducing-bugs-in-react-codebase-by-understanding-anti-patterns                                        |Author with experience and previous publications |
+|F48   |https://www.kantega.no/blogg/slaying-a-ui-antipattern-with-typescript-and-react                                              |Author with previous publications and concise text  |
+|F49   |https://steven-lemon182.medium.com/are-typescript-barrel-files-an-anti-pattern-72a713004250                                  |Author with previous publications and concise text  |                                                                                                               |                                        |
